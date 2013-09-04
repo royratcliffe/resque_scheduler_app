@@ -7,8 +7,5 @@ namespace :resque do
     require 'resque/scheduler'
 
     Resque::Scheduler.dynamic = true
-
-    uri = URI.parse(ENV['REDIS_URL'])
-    Resque.redis = Redis.new(host: uri.host, port: uri.port, password: uri.password)
   end
 end
